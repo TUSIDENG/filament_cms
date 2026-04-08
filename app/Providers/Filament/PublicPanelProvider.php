@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\PublicResources\Dashboard\Pages\Welcome;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
@@ -28,6 +29,9 @@ class PublicPanelProvider extends PanelProvider
             // 可以在这里指定具体的资源，或者创建单独的目录
             ->discoverResources(in: app_path('Filament/PublicResources'), for: 'App\Filament\PublicResources')
             ->discoverPages(in: app_path('Filament/PublicPages'), for: 'App\Filament\PublicPages')
+            ->pages([
+                Welcome::class,
+            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
