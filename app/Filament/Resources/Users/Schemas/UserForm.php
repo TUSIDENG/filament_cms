@@ -19,9 +19,9 @@ class UserForm
                     ->email()
                     ->required(),
                 DateTimePicker::make('email_verified_at'),
-                TextInput::make('password')
-                    ->password()
-                    ->required(),
+                // TextInput::make('password')
+                //     ->password()
+                //     ->required(),
             ]);
     }
 }
